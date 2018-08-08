@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Example.iml" filepath="$PROJECT_DIR$/.idea/Example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Security-DB-Authentication/Spring-Security-Example.iml" filepath="$PROJECT_DIR$/Spring-Security-DB-Authentication/Spring-Security-Example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Cloud/greeting/greeting.iml" filepath="$PROJECT_DIR$/Spring-Cloud/greeting/greeting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Kotlin-Spring-Security-DB-Authentication/kotlin.iml" filepath="$PROJECT_DIR$/Kotlin-Spring-Security-DB-Authentication/kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring Boot Mongo DB Demo/mongodbdemo.iml" filepath="$PROJECT_DIR$/Spring Boot Mongo DB Demo/mongodbdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Cloud/name/name.iml" filepath="$PROJECT_DIR$/Spring-Cloud/name/name.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-Cloud/web/web.iml" filepath="$PROJECT_DIR$/Spring-Cloud/web/web.iml" />
+    </modules>
+  </component>
+</project>
