@@ -1,0 +1,13 @@
+server:
+  port: 7070
+name: Deepak
+names:
+- Baxter
+- Dave
+- Spencer
+- Jon
+- Marcin
+- Adrian
+spring:
+  application:
+    name: name
