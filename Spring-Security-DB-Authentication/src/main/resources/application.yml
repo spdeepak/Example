@@ -1,0 +1,23 @@
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+      exclude: static/**,templates/**
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQL57InnoDBDialect
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://localhost/jwt
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    dbcp2:
+      test-while-idle: true
+      validation-query: SELECT 1
+    continue-on-error: false
+  resources:
+    static-locations: classpath:/templates/,classpath:/static/,classpath:/static/css/
