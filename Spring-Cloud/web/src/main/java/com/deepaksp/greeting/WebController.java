@@ -23,10 +23,12 @@ public class WebController {
     @GetMapping
     public String index(HttpServletRequest request) {
         String locale = RequestContextUtils.getLocaleResolver(request).resolveLocale(request).toLanguageTag();
-        String greeting = new StringBuilder().append(greetingService.getGreeting(locale)).
-                append(" ").append(nameService.getName()).toString();
-        log.info("Greeting: " + greeting);
+        String localeGreeting = greetingService.getGreeting(locale);
+        String name = nameService.getName();
         log.info("Locale: " + locale);
+        log.info("Name: " + name);
+        String greeting = new StringBuilder().append(localeGreeting).append(" ").append(name).toString();
+        log.info("Greeting: " + greeting);
         return greeting;
     }
 }

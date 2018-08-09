@@ -9,7 +9,6 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
@@ -22,19 +21,14 @@ public class WebApplication {
         SpringApplication.run(WebApplication.class, args);
     }
 
-    @Configuration
-    static class MyConfig {
+    @Bean
+    @LoadBalanced
+    public RestTemplate rest() {
+        return new RestTemplateBuilder().build();
+    }
 
-        @Bean
-        @LoadBalanced
-        public RestTemplate rest() {
-            return new RestTemplateBuilder().build();
-        }
-
-        @Bean
-        public Sampler getSampler() {
-            return Sampler.ALWAYS_SAMPLE;
-        }
-
+    @Bean
+    public Sampler getSampler() {
+        return Sampler.ALWAYS_SAMPLE;
     }
 }

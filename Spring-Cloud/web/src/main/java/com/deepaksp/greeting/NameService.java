@@ -1,10 +1,8 @@
 package com.deepaksp.greeting;
 
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 
 @Service
-//@EnableFeignClients("name")
 public class NameService {
 
     private NameFeignClient nameFeignClient;
@@ -17,10 +15,5 @@ public class NameService {
         return nameFeignClient.getName();
     }
 
-    @FeignClient("name")
-    static interface NameFeignClient {
-
-        public String getName();
-    }
 }
 
