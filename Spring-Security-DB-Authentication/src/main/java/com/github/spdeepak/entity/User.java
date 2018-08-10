@@ -38,8 +38,7 @@ public class User implements Serializable {
     @Column(columnDefinition = "boolean default true", nullable = false)
     private boolean enabled;
 
-    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @ManyToMany
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Role> roles;
 
     protected User(User user) {
