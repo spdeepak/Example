@@ -9,7 +9,7 @@ spring:
     show-sql: false
     database-platform: org.hibernate.dialect.MySQL57InnoDBDialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: none
   datasource:
     url: jdbc:mysql://localhost/jwt
     username: root
@@ -21,3 +21,11 @@ spring:
     continue-on-error: false
   resources:
     static-locations: classpath:/templates/,classpath:/static/,classpath:/static/css/
+
+zuul:
+  routes:
+    auth-service:
+      path: /auth/**
+      service-id: AUTH-SERVICE
+      strip-prefix: false
+      sensitive-headers: Cookie,Set-Cookie

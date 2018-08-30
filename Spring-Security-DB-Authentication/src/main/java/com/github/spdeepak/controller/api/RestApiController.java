@@ -14,4 +14,5 @@ public class RestApiController {
     public ResponseEntity dummyController() {
         return new ResponseEntity<>("This is the secured message", HttpStatus.OK);
     }
+
 }

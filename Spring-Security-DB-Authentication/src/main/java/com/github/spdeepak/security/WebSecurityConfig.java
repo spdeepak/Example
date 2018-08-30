@@ -1,8 +1,6 @@
-package com.github.spdeepak.security.ui;
+package com.github.spdeepak.security;
 
 import com.github.spdeepak.service.CustomUserDetailsService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -10,15 +8,16 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-
-	private static Logger logger = LoggerFactory.getLogger(WebSecurityConfig.class);
 
 	@Autowired
 	private CustomUserDetailsService customUserDetailsService;
@@ -28,16 +27,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		http.csrf().disable();
 		http.authorizeRequests()
 				.antMatchers("/api/**").authenticated()
-				.anyRequest().permitAll()
-				.and()
-				.httpBasic() //This line will enable Basic Authentication as well. It can be used to access REST API from Postman using Basic Authentication
-				.and()
-				.formLogin().permitAll().failureUrl("/login?error")
-				.and()
-				.logout().logoutRequestMatcher(new AntPathRequestMatcher("logout")).logoutSuccessUrl("/login")
-				.and().csrf();
+				.anyRequest().permitAll();
+		http.httpBasic(); //This line will enable Basic Authentication as well. It can be used to access REST API from Postman using Basic Authentication
+		http.formLogin().permitAll().failureUrl("/login?error");
+		http.logout().logoutRequestMatcher(new AntPathRequestMatcher("logout")).logoutSuccessUrl("/login");
+		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		http.exceptionHandling().authenticationEntryPoint((req, resp, e) -> resp.sendError(HttpServletResponse.SC_UNAUTHORIZED));
+		http.headers().cacheControl();
 	}
 
 	@Override
