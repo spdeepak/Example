@@ -8,8 +8,9 @@ spring:
         auto-registration: true
         instance:
           metadata:
-            username: admin
-            password: admin
+            user:
+              name: admin
+              password: admin
   application:
     name: Spring Boot Admin Client
 management:
