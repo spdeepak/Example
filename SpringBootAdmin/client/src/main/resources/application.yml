@@ -24,4 +24,4 @@ management:
 info:
   doc: http://spring.io
 server:
-  port: 8080
+  port: 8081
