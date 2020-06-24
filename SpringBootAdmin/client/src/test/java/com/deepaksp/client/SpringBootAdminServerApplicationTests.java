@@ -1,4 +1,4 @@
-package com.deepaksp.server;
+package com.deepaksp.client;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

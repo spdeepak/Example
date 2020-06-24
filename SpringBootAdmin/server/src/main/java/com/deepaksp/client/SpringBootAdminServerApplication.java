@@ -1,4 +1,4 @@
-package com.deepaksp.server;
+package com.deepaksp.client;
 
 import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
