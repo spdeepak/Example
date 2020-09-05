@@ -21,7 +21,7 @@ open class WebSecurityConfiguration(private val customUserDetailsService: Custom
 	override fun configure(http: HttpSecurity) {
 		http.authorizeRequests()
 				.antMatchers("/").permitAll()
-				.antMatchers("/api/*").authenticated()
+				.antMatchers("/api/**").authenticated()
 				.and()
 				.httpBasic() //This line will enable Basic Authentication as well. It can be used to access REST API from Postman using Basic Authentication
 				.and()
