@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.spdeepak</groupId>
-    <artifactId>kotlin</artifactId>
+    <artifactId>Kotlin-Spring-Security-DB-Authentication</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
