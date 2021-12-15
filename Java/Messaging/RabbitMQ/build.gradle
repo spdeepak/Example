@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.github.spdeepak'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.rabbitmq:amqp-client:5.14.0'
+
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+}
+
+test {
+    useJUnitPlatform()
+}
