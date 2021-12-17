@@ -26,7 +26,7 @@ fabric.propertyTrees
 
 # Spring
 .gradle
-gradlew*
+#gradlew*
 *.sw?
 .#*
 *#
