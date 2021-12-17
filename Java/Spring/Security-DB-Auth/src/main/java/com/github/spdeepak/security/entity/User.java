@@ -15,6 +15,7 @@ import java.util.Set;
 
 @Data
 @Entity
+@NoArgsConstructor
 public class User implements Serializable {
 
     @Id

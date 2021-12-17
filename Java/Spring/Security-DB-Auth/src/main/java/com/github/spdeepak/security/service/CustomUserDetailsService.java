@@ -1,6 +1,5 @@
 package com.github.spdeepak.security.service;
 
-import com.github.spdeepak.security.entity.User;
 import com.github.spdeepak.security.repository.UserRepository;
 import com.github.spdeepak.security.security.CustomUserDetails;
 import lombok.RequiredArgsConstructor;
@@ -10,8 +9,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
 
 @Slf4j
 @Service
@@ -23,8 +20,8 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> optionalUser = userRepository.findByUsername(username);
-        optionalUser.orElseThrow(() -> new UsernameNotFoundException("Username not found"));
-        return optionalUser.map(CustomUserDetails::new).get();
+        return userRepository.findByUsername(username)
+                .map(CustomUserDetails::new)
+                .orElseThrow(() -> new UsernameNotFoundException("Username not found"));
     }
 }

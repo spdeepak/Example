@@ -1,0 +1,22 @@
+{
+  "id": 1,
+  "version": 1,
+  "firstName": "First",
+  "lastName": "Last",
+  "username": "username",
+  "password": "passwordofusername",
+  "accountNonExpired": true,
+  "accountNonLocked": true,
+  "credentialsNonExpired": true,
+  "enabled": true,
+  "roles": [
+    {
+      "id": 1,
+      "role": "role one"
+    },
+    {
+      "id": 2,
+      "role": "role two"
+    }
+  ]
+}
