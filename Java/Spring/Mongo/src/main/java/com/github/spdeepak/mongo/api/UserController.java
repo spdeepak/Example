@@ -1,7 +1,7 @@
 package com.github.spdeepak.mongo.api;
 
-import com.deepaksp.mongodbdemo.entity.User;
-import com.deepaksp.mongodbdemo.repository.UserRepository;
+import com.github.spdeepak.mongo.entity.User;
+import com.github.spdeepak.mongo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
 package com.github.spdeepak.mongo.repository;
 
-import com.deepaksp.mongodbdemo.entity.User;
+import com.github.spdeepak.mongo.entity.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

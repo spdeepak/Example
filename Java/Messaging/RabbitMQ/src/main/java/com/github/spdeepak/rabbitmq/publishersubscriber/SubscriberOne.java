@@ -1,7 +1,7 @@
 package com.github.spdeepak.rabbitmq.publishersubscriber;
 
-import com.deepaksp.rabbitmq.object.Car;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.spdeepak.rabbitmq.object.Car;
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
