@@ -1,6 +1,5 @@
 package com.github.spdeepak.security.api;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class RestApiController {
 
     @GetMapping
-    public ResponseEntity dummyController() {
-        return new ResponseEntity<>("This is the secured message", HttpStatus.OK);
+    public ResponseEntity<String> dummyController() {
+        return ResponseEntity.ok("This is the secured message");
     }
 
 }
