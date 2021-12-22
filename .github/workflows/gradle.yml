@@ -9,9 +9,11 @@ name: Java CI with Gradle
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - '*'
   pull_request:
-    branches: [ master ]
+    branches:
+      - '*'
 
 jobs:
   build:
@@ -25,7 +27,15 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Build with Gradle
-      uses: gradle/gradle-build-action@4137be6a8bf7d7133955359dbd952c0ca73b1021
-      with:
-        arguments: build
+    - name: Mongo Project
+      working-directory: ./Java/Spring/Mongo
+      run: ./gradlew build
+    - name: RabbitMQ
+      working-directory: ./Java/Messaging/RabbitMQ
+      run: ./gradlew build
+    - name: Security DB Auth
+      working-directory: ./Java/Spring/Security_DB_Auth
+      run: ./gradlew build
+    - name: Multiple DB SQL-NOSQL
+      working-directory: ./Java/Spring/MultipleDB_SQl_NoSQL
+      run: ./gradlew build
