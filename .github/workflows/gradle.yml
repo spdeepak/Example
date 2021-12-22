@@ -39,3 +39,6 @@ jobs:
     - name: Multiple DB SQL-NOSQL
       working-directory: ./Java/Spring/MultipleDB_SQl_NoSQL
       run: ./gradlew build
+    - name: Kotlin - DB Auth security
+      working-directory: ./Kotlin/Spring/DB_Auth_Security
+      run: ./gradlew build
