@@ -1,4 +1,4 @@
-module GORM-Mux
+module GORM_Mux
 
 go 1.17
 
