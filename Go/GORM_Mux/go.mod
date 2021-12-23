@@ -1,4 +1,4 @@
-module GORM_Mux
+module github.com/spdeepak/gormmux
 
 go 1.17
 
