@@ -15,23 +15,23 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/")
+@RequestMapping("/api/v1/users")
 public class UserController {
 
     private final UserRepository userRepository;
 
-    @PostMapping("/create")
-    public ResponseEntity createUser(@RequestBody User user) {
-        user = userRepository.save(user);
-        return new ResponseEntity<>(user, HttpStatus.CREATED);
-    }
-
-    @GetMapping("/findAll")
+    @GetMapping
     public ResponseEntity getAllUsers() {
         List<User> users = userRepository.findAll();
         return users.isEmpty() ?
                 new ResponseEntity<>(HttpStatus.NOT_FOUND) :
                 new ResponseEntity<>(users, HttpStatus.FOUND);
+    }
+
+    @PostMapping
+    public ResponseEntity createUser(@RequestBody User user) {
+        user = userRepository.save(user);
+        return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
 }
