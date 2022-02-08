@@ -21,7 +21,7 @@ public class UserController {
     private final UserRepository userRepository;
 
     @GetMapping
-    public ResponseEntity getAllUsers() {
+    public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userRepository.findAll();
         return users.isEmpty() ?
                 new ResponseEntity<>(HttpStatus.NOT_FOUND) :
@@ -29,7 +29,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity createUser(@RequestBody User user) {
+    public ResponseEntity<User> createUser(@RequestBody User user) {
         user = userRepository.save(user);
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
