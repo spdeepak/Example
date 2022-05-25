@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
-	"github.com/spdeepak/gormmux/controller"
-	"github.com/spdeepak/gormmux/sql"
 	"log"
 	"net/http"
+
+	"github.com/gorilla/mux"
+	"github.com/spdeepak/GORM_Mux/controller"
+	"github.com/spdeepak/GORM_Mux/sql"
 )
 
 func main() {

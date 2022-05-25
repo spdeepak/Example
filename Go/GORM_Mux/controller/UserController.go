@@ -2,10 +2,11 @@ package controller
 
 import (
 	"encoding/json"
-	"github.com/gorilla/mux"
-	"github.com/spdeepak/gormmux/entity"
-	"github.com/spdeepak/gormmux/sql"
 	"net/http"
+
+	"github.com/gorilla/mux"
+	"github.com/spdeepak/GORM_Mux/entity"
+	"github.com/spdeepak/GORM_Mux/sql"
 )
 
 func GetUsers(w http.ResponseWriter, r *http.Request) {

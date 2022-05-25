@@ -2,7 +2,8 @@ package sql
 
 import (
 	"fmt"
-	"github.com/spdeepak/gormmux/entity"
+
+	"github.com/spdeepak/GORM_Mux/entity"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
