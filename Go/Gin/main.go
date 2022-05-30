@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/spdeepak/Gin/controller"
 )
 
 func main() {
@@ -15,6 +16,10 @@ func main() {
 		c.JSON(200, health)
 	})
 
+	newController := controller.NewController()
+	routerGroup := router.Group("/api/v1")
+	routerGroup.GET("/get", newController.GetController)
+
 	//Run the server
-	router.Run("localhost:8080")
+	router.Run(":8080")
 }
